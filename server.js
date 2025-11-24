@@ -71,10 +71,7 @@ app.post('/api/parafrase', async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log('Server running on http://localhost:3000');
-    console.log('GROQ_API_KEY:', process.env.GROQ_API_KEY ? '✓ Loaded' : '✗ Missing');
-    console.log('Available test endpoints:');
-    console.log('  - http://localhost:3000/api/test');
-    console.log('  - http://localhost:3000/api/test-groq');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
