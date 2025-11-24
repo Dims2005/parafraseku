@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParafraseKu - Alat Parafrase Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1># ParafraseKu</h1>
+            <p>Alat parafrase online untuk teks bahasa Indonesia</p>
+        </header>
+
+        <main>
+            <form id="paraphraseForm">
+                <div class="input-section">
+                    <label for="originalText">Masukkan teks yang ingin Anda parafrasekan:</label>
+                    <textarea 
+                        id="originalText" 
+                        placeholder="Ketik atau paste teks Anda di sini..." 
+                        rows="8"
+                    ></textarea>
+                </div>
+
+                <div class="mode-section">
+                    <label><strong>Pilih Mode Parafrase:</strong></label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="mode" value="sederhana" id="sederhana" checked>
+                            <span class="radio-custom"></span>
+                            Sederhana
+                        </label>
+                        <label>
+                            <input type="radio" name="mode" value="formal">
+                            <span class="radio-custom"></span>
+                            Baku / Formal
+                        </label>
+                        <label>
+                            <input type="radio" name="mode" value="kreatif">
+                            <span class="radio-custom"></span>
+                            Kreatif
+                        </label>
+                        <label>
+                            <input type="radio" name="mode" value="akademik">
+                            <span class="radio-custom"></span>
+                            Akademik
+                        </label>
+                    </div>
+                </div>
+
+                <div class="action-section">
+                    <button type="submit" id="processBtn">
+                        <span id="buttonText">Parafrase Sekarang</span>
+                        <div id="loadingSpinner" class="spinner"></div>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Status koneksi akan ditambahkan di sini oleh JavaScript -->
+
+            <div class="result-section">
+                <label for="resultText"><strong>Hasil Parafrase:</strong></label>
+                <textarea 
+                    id="resultText" 
+                    readonly 
+                    placeholder="Hasil parafrase akan muncul di sini..." 
+                    rows="8"
+                ></textarea>
+            </div>
+        </main>
+
+        <footer>
+            <p>Ditenagai oleh Groq AI • ParafraseKu v1.0</p>
+            <div style="margin-top: 10px;">
+                <a href="/dashboard" style="color: #667eea; text-decoration: none; font-weight: 500;">
+                    📊 Lihat Dashboard Analytics
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

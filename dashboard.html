@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParafraseKu - Parafrase AI yang Menyenangkan!</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="fun-container">
+        <!-- Header -->
+        <header class="fun-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-bubble">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h1>ParafraseKu</h1>
+                </div>
+                <div class="user-bubble">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="welcome-bubble">
+                    <div class="bubble-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="bubble-text">
+                        <h2>Halo! Aku ParafraseKu 🤖</h2>
+                        <p>Yuk ubah teks kamu dengan gaya yang berbeda-beda sambil bersenang-senang!</p>
+                    </div>
+                </div>
+                
+                <div class="feature-cards">
+                    <a href="parafrase.html" class="feature-card">
+                        <div class="card-icon">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3>Parafrase Teks</h3>
+                        <p>Ubah gaya tulisan dengan AI yang cerdas</p>
+                        <div class="card-badge">Populer!</div>
+                    </a>
+                    
+                    <div class="feature-card" onclick="showFeature('game')">
+                        <div class="card-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>Game Parafrase</h3>
+                        <p>Belajar parafrase sambil bermain</p>
+                        <div class="card-badge">Seru!</div>
+                    </div>
+                    
+                    <div class="feature-card" onclick="showFeature('tips')">
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Tips Menulis</h3>
+                        <p>Kiat-kiat menulis yang kreatif</p>
+                        <div class="card-badge">Bermanfaat!</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <main class="main-content-area">
+            <!-- Game Feature -->
+            <div id="game" class="feature-section">
+                <div class="feature-header">
+                    <h2><i class="fas fa-gamepad"></i> Game Parafrase</h2>
+                    <p>Asah skill parafrase sambil bermain!</p>
+                </div>
+
+                <div class="game-cards">
+                    <div class="game-card">
+                        <div class="game-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Tebak Gaya</h3>
+                        <p>Tebak gaya parafrase yang digunakan</p>
+                        <button class="play-btn" onclick="startGame('tebakGaya')">
+                            <i class="fas fa-play"></i> Main
+                        </button>
+                    </div>
+                    
+                    <div class="game-card">
+                        <div class="game-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Parafrase Cepat</h3>
+                        <p>Parafrase teks dalam waktu terbatas</p>
+                        <button class="play-btn" onclick="startGame('cepat')">
+                            <i class="fas fa-play"></i> Main
+                        </button>
+                    </div>
+                    
+                    <div class="game-card">
+                        <div class="game-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Challenge</h3>
+                        <p>Tantangan parafrase tingkat lanjut</p>
+                        <button class="play-btn" onclick="startGame('challenge')">
+                            <i class="fas fa-play"></i> Main
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tips Feature -->
+            <div id="tips" class="feature-section">
+                <div class="feature-header">
+                    <h2><i class="fas fa-lightbulb"></i> Tips Menulis Kreatif</h2>
+                    <p>Kiat-kiat untuk menulis yang lebih baik!</p>
+                </div>
+
+                <div class="tips-container">
+                    <div class="tip-card">
+                        <div class="tip-number">1</div>
+                        <div class="tip-content">
+                            <h3>Gunakan Sinonim</h3>
+                            <p>Cari kata pengganti yang lebih variatif untuk menghindari pengulangan</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">2</div>
+                        <div class="tip-content">
+                            <h3>Ubah Struktur Kalimat</h3>
+                            <p>Coba ubah dari kalimat aktif ke pasif, atau sebaliknya</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">3</div>
+                        <div class="tip-content">
+                            <h3>Perhatikan Gaya Bahasa</h3>
+                            <p>Sesuaikan dengan tujuan penulisan: formal, informal, atau kreatif</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <div class="tip-number">4</div>
+                        <div class="tip-content">
+                            <h3>Baca Ulang Hasil</h3>
+                            <p>Pastikan makna tidak berubah dan hasilnya mudah dipahami</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Fun Footer -->
+        <footer class="fun-footer">
+            <div class="footer-content">
+                <p>Dibuat dengan ❤️ untuk membuat menulis lebih menyenangkan!</p>
+                <div class="footer-links">
+                    <a href="parafrase.html">Parafrase</a>
+                    <a href="#" onclick="showFeature('game')">Game</a>
+                    <a href="#" onclick="showFeature('tips')">Tips</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating Elements for Fun -->
+    <div class="floating-elements">
+        <div class="floating-emoji">✨</div>
+        <div class="floating-emoji">🎨</div>
+        <div class="floating-emoji">📝</div>
+        <div class="floating-emoji">🤖</div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

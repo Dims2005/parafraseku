@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parafrase Teks - ParafraseKu</title>
+    <link rel="stylesheet" href="parafrase.css"> <!-- CSS khusus parafrase -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="fun-container">
+        <!-- Header -->
+        <header class="fun-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <a href="dashboard.html" class="back-button">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <div class="logo-bubble">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h1>Parafrase Teks</h1>
+                </div>
+                <div class="user-bubble">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Paraphrase Content -->
+        <main class="paraphrase-main">
+            <div class="paraphrase-hero">
+                <div class="hero-text">
+                    <h2>Pilih Gaya dan Lihat Keajaiban AI! ✨</h2>
+                    <p>Ubah teks biasa menjadi luar biasa dengan berbagai gaya menulis</p>
+                </div>
+                <div class="hero-illustration">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                </div>
+            </div>
+
+            <div class="paraphrase-fun-card">
+                <div class="input-fun-section">
+                    <div class="input-header-fun">
+                        <h3>📝 Teks Kamu</h3>
+                        <div class="char-count-fun" id="charCount">0/3000 karakter</div>
+                    </div>
+                    <textarea 
+                        id="inputText" 
+                        placeholder="Tulis atau tempel teks yang mau diubah di sini... ✨"
+                        rows="8"
+                    ></textarea>
+                </div>
+
+                <div class="style-selector-fun">
+                    <h3>🎨 Pilih Gaya:</h3>
+                    <div class="style-bubbles">
+                        <div class="style-bubble active" data-mode="sederhana">
+                            <div class="bubble-emoji">😊</div>
+                            <span>Sederhana</span>
+                            <div class="bubble-desc">Bahasa sehari-hari yang mudah dipahami</div>
+                        </div>
+                        <div class="style-bubble" data-mode="formal">
+                            <div class="bubble-emoji">💼</div>
+                            <span>Formal</span>
+                            <div class="bubble-desc">Bahasa baku untuk keperluan resmi</div>
+                        </div>
+                        <div class="style-bubble" data-mode="kreatif">
+                            <div class="bubble-emoji">🎨</div>
+                            <span>Kreatif</span>
+                            <div class="bubble-desc">Gaya bahasa yang menarik dan ekspresif</div>
+                        </div>
+                        <div class="style-bubble" data-mode="akademik">
+                            <div class="bubble-emoji">📚</div>
+                            <span>Akademik</span>
+                            <div class="bubble-desc">Bahasa ilmiah untuk penulisan akademis</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="paraphraseBtn" class="magic-button">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                    <span>Mulai Parafrase Ajaib!</span>
+                    <div class="sparkle-loader" style="display: none;">
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                        <div class="sparkle"></div>
+                    </div>
+                </button>
+
+                <div class="result-fun-section" id="resultSection" style="display: none;">
+                    <div class="result-header-fun">
+                        <h3>🎉 Hasil Parafrase!</h3>
+                        <div class="result-actions-fun">
+                            <button id="copyBtn" class="action-btn">
+                                <i class="fas fa-copy"></i> Salin
+                            </button>
+                            <button id="downloadBtn" class="action-btn">
+                                <i class="fas fa-download"></i> Unduh
+                            </button>
+                            <button id="shareBtn" class="action-btn">
+                                <i class="fas fa-share"></i> Bagikan
+                            </button>
+                            <button id="newParaphraseBtn" class="action-btn primary">
+                                <i class="fas fa-sync"></i> Parafrase Lagi
+                            </button>
+                        </div>
+                    </div>
+                    <div class="result-bubble">
+                        <div class="result-text" id="resultText"></div>
+                    </div>
+                    
+                    <div class="result-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Waktu proses: <strong id="processTime">0</strong> detik</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-font"></i>
+                            <span>Karakter: <strong id="charCountResult">0</strong></span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-palette"></i>
+                            <span>Gaya: <strong id="styleUsed">Sederhana</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Examples Section -->
+            <div class="examples-section">
+                <h3>💡 Contoh Penggunaan</h3>
+                <div class="example-cards">
+                    <div class="example-card">
+                        <div class="example-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Untuk Akademik</h4>
+                        <p>Parafrase makalah, skripsi, atau jurnal dengan gaya formal</p>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h4>Untuk Bisnis</h4>
+                        <p>Ubah laporan atau presentasi dengan bahasa yang profesional</p>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-icon">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h4>Untuk Kreatif</h4>
+                        <p>Buat konten media sosial atau tulisan kreatif yang menarik</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Fun Footer -->
+        <footer class="fun-footer">
+            <div class="footer-content">
+                <p>Dibuat dengan ❤️ untuk membuat menulis lebih menyenangkan!</p>
+                <div class="footer-links">
+                    <a href="dashboard.html">Beranda</a>
+                    <a href="parafrase.html">Parafrase</a>
+                    <a href="#">Bantuan</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Floating Elements for Fun -->
+    <div class="floating-elements">
+        <div class="floating-emoji">✨</div>
+        <div class="floating-emoji">🎨</div>
+        <div class="floating-emoji">📝</div>
+        <div class="floating-emoji">🤖</div>
+    </div>
+
+    <script src="parafrase.js"></script>
+</body>
+</html>
