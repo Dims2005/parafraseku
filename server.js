@@ -1,19 +1,31 @@
+require('dotenv').config(); // <-- tambah ini di baris paling atas
 const express = require('express');
 const path = require('path');
 const axios = require('axios');
 
 const app = express();
 
+// simple request logger (letakkan sebelum static)
+app.use((req, res, next) => {
+  console.log(new Date().toISOString(), req.method, req.url);
+  next();
+});
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Layani file statis dari folder public
-app.use(express.static(path.join(__dirname, 'public')));
+// Layani file statis dari folder public (non-aktifkan index.html default)
+app.use(express.static(path.join(__dirname, 'public'), { index: false }));
 
-// === ROUTES HALAMAN ===
+// tambahan eksplisit (opsional)
+app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/css', express.static(path.join(__dirname, 'public', 'css')));
+app.use('/js', express.static(path.join(__dirname, 'public', 'js')));
+
+// Redirect root ke /dashboard untuk menghindari pencarian index.html
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dashboard.html'));
+  res.redirect('/dashboard');
 });
 
 app.get('/dashboard', (req, res) => {
