@@ -10,9 +10,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// PENTING: Serve static files (CSS, JS, Images)
-// Ini agar style.css, dashboard.css, dll bisa terbaca
-app.use(express.static(__dirname));
+// === PERBAIKAN DI SINI ===
+// Arahkan static files ke folder 'public'
+app.use(express.static(path.join(__dirname, 'public')));
 
 // === ROUTES HALAMAN ===
 app.get('/', (req, res) => {
@@ -87,6 +87,10 @@ app.post('/api/parafrase', async (req, res) => {
 
 // Jalankan Server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server berjalan di port ${PORT}`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Server berjalan di port ${PORT}`);
+    });
+}
+
+module.exports = app;
