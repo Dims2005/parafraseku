@@ -1,14 +1,19 @@
 const express = require('express');
 const path = require('path');
+const axios = require('axios');
 
 const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Layani file statis dari folder public
 app.use(express.static(path.join(__dirname, 'public')));
 
 // === ROUTES HALAMAN ===
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'dashboard.html'));
 });
 
 app.get('/dashboard', (req, res) => {
@@ -75,6 +80,11 @@ app.post('/api/parafrase', async (req, res) => {
             error: 'Gagal memproses permintaan ke AI.' 
         });
     }
+});
+
+// Fallback route
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'dashboard.html'));
 });
 
 // Jalankan Server
