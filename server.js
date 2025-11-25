@@ -1,17 +1,9 @@
 const express = require('express');
-const cors = require('cors');
-const axios = require('axios');
 const path = require('path');
-require('dotenv').config();
 
 const app = express();
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// === PERBAIKAN DI SINI ===
-// Arahkan static files ke folder 'public'
+// Layani file statis dari folder public
 app.use(express.static(path.join(__dirname, 'public')));
 
 // === ROUTES HALAMAN ===
