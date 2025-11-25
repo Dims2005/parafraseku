@@ -64,7 +64,7 @@ app.post('/api/parafrase', async (req, res) => {
                 'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
                 'Content-Type': 'application/json'
             },
-            timeout: 30000 // 30 detik timeout
+            timeout: 30000
         });
 
         // Kirim hasil ke frontend
@@ -80,6 +80,14 @@ app.post('/api/parafrase', async (req, res) => {
             error: 'Gagal memproses permintaan ke AI.' 
         });
     }
+});
+
+// Tambah debug route
+app.get('/debug/public', (req, res) => {
+    const fs = require('fs');
+    const publicPath = path.join(__dirname, 'public');
+    const files = fs.readdirSync(publicPath, { recursive: true });
+    res.json({ files });
 });
 
 // Fallback route
